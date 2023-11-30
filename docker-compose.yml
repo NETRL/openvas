@@ -6,7 +6,7 @@ services:
       restart: always
       hostname: nginx
       ports:
-        - "81:80"
+        - "8888:80"
       links:
         - openvas
       volumes:
@@ -51,6 +51,7 @@ services:
         - "448:443"
       volumes:
         - "./data/openvas:/var/lib/openvas/mgr/"
+        - "./data/openvas-gsa:/etc/default/openvas-gsa"
       environment:
         # CHANGE THIS !
         OV_PASSWORD: securepassword41
